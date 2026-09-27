@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Listen to your own Navidrome collection directly on Discogs release pages. An unofficial Chrome extension that matches your records by catalog number.">
+  <title>Your Library for Discogs</title>
+  <link rel="icon" href="icon.png">
+  <style>
+    :root{color-scheme:light;--ink:#213b33;--green:#19634d;--muted:#586e64;--line:#d7e3dc}
+    *{box-sizing:border-box}body{margin:0;background:#f7faf8;color:var(--ink);font:17px/1.65 system-ui,sans-serif}
+    main,footer{max-width:1040px;margin:auto;padding:32px 28px}header{display:flex;align-items:center;gap:12px;font-weight:750}header img{width:46px;height:46px}
+    .hero{padding:68px 0 52px;max-width:820px}.eyebrow{color:var(--green);font-size:13px;letter-spacing:.14em;font-weight:750;text-transform:uppercase}
+    h1{font-size:clamp(40px,7vw,70px);letter-spacing:-.045em;line-height:1.08;margin:16px 0 24px}h2{line-height:1.2;font-size:25px;margin:0 0 12px}p{margin:12px 0;color:var(--muted)}
+    .intro{font-size:21px;max-width:650px}.links{display:flex;gap:12px;flex-wrap:wrap;margin:28px 0 0}a{color:var(--green);text-underline-offset:3px}.button{border:1px solid var(--line);border-radius:8px;padding:11px 18px;text-decoration:none;font-weight:650;background:white}.primary{background:var(--green);color:white;border-color:var(--green)}a:focus-visible{outline:3px solid #b68326;outline-offset:4px}
+    .features{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{padding:25px;background:white;border:1px solid var(--line);border-radius:12px}.card h2{font-size:20px}.card p{font-size:16px}
+    .setup{margin-top:42px;padding-top:34px;border-top:1px solid var(--line)}ol{padding-left:24px;color:var(--muted)}li{padding:5px 0}code{font-size:.9em;color:var(--ink)}.note{font-size:14px}footer{border-top:1px solid var(--line);margin-top:30px;font-size:14px}footer nav{display:flex;gap:22px;flex-wrap:wrap}
+    @media(max-width:700px){.features{grid-template-columns:1fr}.hero{padding:44px 0 32px}main,footer{padding:24px}.intro{font-size:19px}}
+  </style>
+</head>
+<body>
+  <main>
+    <header><img src="icon.png" alt="" width="46" height="46">Your Library for Discogs</header>
+    <section class="hero" aria-labelledby="title">
+      <div class="eyebrow">Discogs browsing. Your own music.</div>
+      <h1 id="title">Your records.<br>Ready to play.</h1>
+      <p class="intro">A compact player for the music you already own, right on Discogs release pages. Connect your Navidrome library and listen as you browse.</p>
+      <div class="links"><a class="button primary" href="https://github.com/dimamarkus/discogs-navidrome#install-and-test">Get the extension source</a><a class="button" href="privacy.html">Privacy policy</a></div>
+      <p class="note">Version 0.2.1 · Chrome extension · Requires your own HTTPS Navidrome server</p>
+    </section>
+    <section class="features" aria-label="Features">
+      <article class="card"><h2>Find your records</h2><p>Catalog numbers connect a Discogs release to albums in your library. Search manually or choose an album when you need another match.</p></article>
+      <article class="card"><h2>Listen beside Videos</h2><p>Play, pause and seek from the sidebar. Collapse the player to keep browsing; releases without a match start collapsed.</p></article>
+      <article class="card"><h2>Your server, your library</h2><p>Audio streams from the server you choose. No developer analytics or advertising. Passwords are not saved.</p></article>
+    </section>
+    <section class="setup" aria-labelledby="setup-title">
+      <h2 id="setup-title">Get started</h2>
+      <ol><li>Download the repository and load its <code>extension/</code> folder in Chrome using Developer mode and <strong>Load unpacked</strong>.</li><li>Open the extension settings, enter your HTTPS Navidrome server, allow access to that server and sign in.</li><li>Open a Discogs release page. Matching albums appear in the player above Videos when that section is available.</li></ol>
+      <p>Compatibility targets Navidrome 0.64. Plex is not supported. You sign in again after restarting Chrome, and closing or reloading a release page stops playback.</p>
+      <p class="note">Catalog matches do not guarantee the same pressing or mastering. Seeking may buffer a complete track first. This project does not supply music or access to a shared library.</p>
+    </section>
+  </main>
+  <footer><nav aria-label="Project links"><a href="privacy.html">Privacy</a><a href="https://github.com/dimamarkus/discogs-navidrome/issues">Support</a><a href="https://github.com/dimamarkus/discogs-navidrome">Source on GitHub</a></nav><p>Unofficial and not affiliated with or endorsed by Discogs or Navidrome.</p></footer>
+</body>
+</html>

@@ -1,0 +1,14 @@
+Version 0.2.1 — September 26, 2026
+Scoped layout fix: removed clear:both from injected sidebar wrapper after identifying float clearance in the user-provided DOM screenshot.
+content.js syntax and archive contents checked.
+The 25 API/playback/storage tests passed for 0.2.0; those code paths are unchanged.
+Live browser gap fix not verified here: Chromium unavailable.
+Upload SHA-256: 9f628fa586f7301a2bbbc942d113cca7b0bfc6b9907c8dcabbba60ac49252e59
+
+Repository preparation — September 27, 2026
+All 25 API/playback/storage fixture tests passed again.
+Homepage and hosted privacy page local links checked.
+Deterministic tools/package.py ZIP contains exactly the same extension file bytes as the prior upload.
+Rebuilt ZIP SHA-256: 180b2ffc9cb8f424481b09d20dabcf660b8be584ae4eae796170415349d5fd4e
+The different archive hash reflects ZIP metadata/compression, not an extension code change.
+GitHub Pages must be enabled for the public website URLs to work.

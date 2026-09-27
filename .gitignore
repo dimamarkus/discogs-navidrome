@@ -1,0 +1,11 @@
+dist/
+node_modules/
+__pycache__/
+*.pyc
+.DS_Store
+.env
+.env.*
+*.pem
+*.key
+test-results/
+playwright-report/

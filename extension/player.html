@@ -1,0 +1,26 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="referrer" content="no-referrer"><title>Your Library · Player</title><link rel="stylesheet" href="style.css"></head><body class="player-page">
+<main id="player" class="player compact collapsed">
+ <header class="top">
+  <button id="toggle" class="collapse-toggle" aria-expanded="false" aria-controls="player-body" title="Expand your library player"><span class="record" aria-hidden="true"></span><span class="header-copy"><span class="header-title">Your Library</span><span id="summary" class="header-summary">Finding this release…</span></span><span id="chevron" class="chevron" aria-hidden="true">⌄</span></button>
+  <button id="mini-play" class="mini-play" aria-label="Play album" title="Play album" hidden>▶</button>
+  <button id="settings" class="text-button settings-icon" title="Settings" aria-label="Open player settings">⚙</button>
+ </header>
+ <div id="player-body" hidden>
+ <section class="release"><p id="release-title" class="release-title">Finding this release…</p><p id="catalogs" class="catalogs"></p></section>
+ <p id="status" class="status" role="status" aria-live="polite"></p>
+ <section id="matches" class="match-panel" hidden><label id="choose-label">Available albums<select id="choose"></select></label>
+   <div class="album-summary"><img id="cover" class="cover" alt="Album artwork" hidden><div class="album-copy"><p id="album-title" class="album-title"></p><p id="album-artist" class="muted small"></p><span id="match-badge" class="badge" title="A catalog match does not guarantee the same pressing or mastering."></span></div></div>
+   <div class="player-actions"><button id="play-all" class="primary">▶ Play album</button><a id="open-album" class="small" target="_blank" rel="noopener noreferrer">Open ↗</a></div>
+   <ol id="tracks" class="tracklist"></ol>
+   <div class="transport"><button id="previous" title="Previous track" aria-label="Previous track">‹</button><button id="transport-play" title="Play or pause" aria-label="Play">▶</button><span id="elapsed" class="clock">0:00</span><input id="seek" type="range" min="0" max="1" step="0.1" value="0" aria-label="Seek in track" disabled><span id="total" class="clock">0:00</span><button id="next" title="Next track" aria-label="Next track">›</button></div>
+   <audio id="audio" preload="none" hidden></audio><div class="volume-row"><label for="volume">Volume</label><input id="volume" type="range" min="0" max="1" step="0.01" value="1" aria-label="Volume"></div>
+   <p id="now-playing" class="now-playing">Choose a track to start listening.</p>
+ </section>
+ <details id="manual" class="manual"><summary>Find or change match</summary>
+  <button id="remember" class="text-button" hidden>Remember this match</button>
+  <form id="catalog-form"><label>Catalog number<div class="row"><input id="catalog-input" placeholder="e.g. BDTS009" required maxlength="160"><button type="submit">Find</button></div></label></form>
+  <form id="manual-album-form"><label>Navidrome album URL<div class="row"><input id="manual-album" placeholder="https://…/album/…/show" required><button type="submit">Use</button></div></label></form>
+  <div class="row"><button id="retry" class="text-button">Retry release</button><button id="forget" class="text-button" hidden>Forget saved match</button></div>
+ </details>
+ </div>
+</main><script type="module" src="player.mjs"></script></body></html>

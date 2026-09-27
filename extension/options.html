@@ -1,0 +1,22 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Discogs · Your Library — Settings</title><link rel="stylesheet" href="style.css"></head><body>
+<main class="options">
+  <div class="brand"><span class="record" aria-hidden="true"></span><div><p class="eyebrow">Discogs × Navidrome · v0.2.1</p><h1>Your records. Ready to play.</h1></div></div>
+  <p class="muted">A player for the music you already own, right on Discogs release pages. Connect your own Navidrome server to get started. Sign in again after restarting Chrome.</p>
+  <section class="card"><h2>Connect your library</h2><form id="login-form">
+    <label>Navidrome server<input id="server" type="url" required placeholder="https://music.example.com" autocomplete="url"></label>
+    <div class="row"><label>Username<input id="username" required autocomplete="username"></label><label>Password<input id="password" type="password" required autocomplete="current-password"></label></div>
+    <div class="row"><button class="primary" id="connect" type="submit">Connect Navidrome</button><button type="button" id="logout">Disconnect</button></div>
+  </form><p class="subtle">Your password is sent to your chosen server and is not saved by this extension. Login tokens stay in memory for this Chrome session. To match releases, the extension sends the current Discogs release ID to the Discogs API and catalog queries to your server. No analytics. <a href="privacy.html" target="_blank">Privacy policy</a>.</p><p id="connection" class="status"></p></section>
+  <section class="card"><h2>Playback & matching</h2><form id="preferences">
+    <label>Streaming quality<select id="quality"><option value="mp3">MP3 · 320 kbps · browser compatible</option><option value="original">Original file · requires browser codec support</option></select></label>
+    <details><summary>Optional Discogs API token</summary><label>Personal access token<input id="discogs-token" type="password" autocomplete="off" placeholder="Leave blank to keep this session’s token"></label><p class="subtle">Optional; kept in memory until Chrome restarts. Usually unnecessary for release lookups. If Discogs requires authentication, create a personal token in Discogs Settings → Developers. <label><input id="clear-token" type="checkbox"> Remove saved Discogs token</label></p></details>
+    <div><button type="submit">Save preferences</button></div>
+  </form></section>
+  <section class="card"><h2>Check your connection</h2><p class="muted small">Paste an album URL from your library or search an imported catalog number. These checks do not require a Discogs page.</p>
+    <form id="album-form"><label>Navidrome album URL or ID<input id="album" placeholder="Paste an album URL from your server" required></label><div class="row"><button type="submit">Test album</button><button type="button" id="open-player">Open test player</button></div></form>
+    <form id="catalog-test-form" style="margin-top:16px"><label>Test a catalog number<input id="test-catalog" placeholder="Enter a catalog number in your library" required maxlength="160"></label><div><button type="submit">Test catalog</button></div></form>
+    <p id="diagnostics" class="status"></p>
+  </section>
+  <p id="status" class="status" role="status" aria-live="polite"></p>
+  <p class="muted small">After connecting, open any <strong>discogs.com/release/…</strong> page. Reload Discogs tabs that were open during installation. Master-release and marketplace pages are not supported in this first version.</p>
+<p class="subtle">Unofficial extension. Not affiliated with or endorsed by Discogs or Navidrome. Requires your own Navidrome server and music library.</p></main><script type="module" src="options.mjs"></script></body></html>
